@@ -1,0 +1,48 @@
+package com.example.patterns.mvi
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
+
+class CounterViewModel : ViewModel() {
+
+    // Internal state of the counter
+    private val _state = MutableStateFlow(CounterState())
+    val state: StateFlow<CounterState> = _state.asStateFlow()
+
+    // Channel to handle intents
+    private val intentChannel = Channel<CounterIntent>(Channel.UNLIMITED)
+
+    init {
+        handleIntents()
+    }
+
+    fun sendIntent(intent: CounterIntent) {
+        viewModelScope.launch {
+            intentChannel.send(intent)
+        }
+    }
+
+    private fun handleIntents() {
+        viewModelScope.launch {
+            intentChannel.consumeAsFlow().collect { intent ->
+                when (intent) {
+                    is CounterIntent.Increment -> incrementCounter()
+                    is CounterIntent.Reset -> resetCounter()
+                }
+            }
+        }
+    }
+
+    private fun incrementCounter() {
+        _state.update { currentState ->
+            currentState.copy(count = currentState.count + 1)
+        }
+    }
+
+    private fun resetCounter() {
+        _state.update { CounterState() }
+    }
+}
