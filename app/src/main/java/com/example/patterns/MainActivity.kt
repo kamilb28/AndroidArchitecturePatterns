@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.patterns.screens.MvcCounterScreen
+import com.example.patterns.screens.MviCounterScreen
 import com.example.patterns.screens.MvpCounterScreen
 import com.example.patterns.screens.MvvmCounterScreen
 import com.example.patterns.screens.WelcomeScreen
@@ -27,6 +28,7 @@ class MainActivity : ComponentActivity() {
                     composable(NavDestinations.MvcCounter.route) { MvcCounterScreen(navController) }
                     composable(NavDestinations.MvpCounter.route) { MvpCounterScreen(navController) }
                     composable(NavDestinations.MvvmCounter.route) { MvvmCounterScreen(navController) }
+                    composable(NavDestinations.MviCounter.route) { MviCounterScreen(navController) }
                 }
             }
         }

@@ -59,5 +59,15 @@ fun WelcomeScreen(navController: NavHostController) {
         ) {
             Text("MVVM Counter", fontSize = 18.sp, fontWeight = FontWeight.Medium)
         }
+
+        Button(
+            onClick = { navController.navigate(NavDestinations.MviCounter.route) },
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF009688), contentColor = Color.White),
+            shape = RoundedCornerShape(12.dp),
+            modifier = Modifier.padding(8.dp)
+        ) {
+            Text("MVI Counter", fontSize = 18.sp, fontWeight = FontWeight.Medium)
+        }
+
     }
 }

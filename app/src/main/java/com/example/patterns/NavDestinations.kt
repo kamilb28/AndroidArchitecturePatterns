@@ -5,4 +5,5 @@ sealed class NavDestinations(val route: String) {
     object MvcCounter : NavDestinations("mvc_counter")
     object MvpCounter : NavDestinations("mvp_counter")
     object MvvmCounter : NavDestinations("mvvm_counter")
+    object MviCounter : NavDestinations("mvi_counter")
 }
