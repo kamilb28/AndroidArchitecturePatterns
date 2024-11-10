@@ -1,3 +1,10 @@
 package com.example.patterns.models
 
-data class CounterModel(var count: Int = 0)
+class CounterModel {
+    var count = 0
+        private set
+
+    fun increment() {
+        count++
+    }
+}
