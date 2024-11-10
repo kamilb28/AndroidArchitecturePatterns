@@ -25,23 +25,19 @@ class MainActivity : ComponentActivity() {
         setContent {
             AndroidArchitecturePatternsTheme {
                 // Define the state variable for the message
-                val messageState = remember { mutableStateOf("Initial Message") }
                 val counterState = remember { mutableStateOf(0) }
 
                 // Instantiate the controller with the message state
-                val controller = MvcController(messageState, counterState)
+                val controller = remember { MvcController(counterState) }
 
                 // Display the UI
                 Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(16.dp)
-                        .background(color = Color(0xFFF5F5F5)),
+                    modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        text = "Counter App",
+                        text = "Counter App in MVC Pattern",
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color(0xFF3A3A3A)

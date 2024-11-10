@@ -5,19 +5,22 @@ import com.example.patterns.models.CounterModel
 import com.example.patterns.models.MessageModel
 
 class MvcController(
-        private val messageState: MutableState<String>,
-        private val counterState: MutableState<Int>) {
-    private val messageModel = MessageModel()
+    private val counterState: MutableState<Int>
+) {
     private val counterModel = CounterModel()
 
-    fun updateMessage(){
-        messageState.value = messageModel.message
+    init {
+        println("MvcController initialized") // To verify it's only initialized once
     }
 
-    fun incrementCounter(){
-        counterModel.count++
+    fun incrementCounter() {
+        // Update the model
+        println("Current counter value 1: ${counterState.value}")
+        counterModel.increment()
+        println("Current counter value 2: ${counterState.value}")
+        // Reflect the model's state in the UI state
+        println("Current counter value 3: ${counterState.value}")
         counterState.value = counterModel.count
-        println("Current counter value: ${counterModel.count}")
-        println("Current counter value: ${counterState.value}")
+        println("Current counter value 4: ${counterState.value}")
     }
 }
