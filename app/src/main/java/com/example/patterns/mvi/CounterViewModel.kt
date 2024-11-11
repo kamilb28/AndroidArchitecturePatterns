@@ -26,14 +26,12 @@ class CounterViewModel : ViewModel() {
     }
 
     private fun handleIntents() {
-        // TODO complete handling the user's actins, use `switch` or kotlin's `when` to determine
+        return;
+        // TODO [MVI]: complete handling the user's actins, use `switch` or kotlin's `when` to determine
         //  if to increment or reset counter (see CounterIntent class), then remove above's return statement
         viewModelScope.launch {
             intentChannel.consumeAsFlow().collect { intent ->
-                when (intent) {
-                    is CounterIntent.Increment -> incrementCounter()
-                    is CounterIntent.Reset -> resetCounter()
-                }
+                // add code here
             }
         }
     }

@@ -15,9 +15,7 @@ class MvvmCounterViewModel : ViewModel() {
 
     fun incrementCounter() {
         viewModelScope.launch {
-            // TODO use method in counterModel to increment value then pass this value to MutableStateFlow of counterModel value
-            counterModel.increment()
-            _counter.value = counterModel.count
+            // TODO [MVVM]: use method in counterModel to increment value then pass this value to MutableStateFlow of counterModel value
         }
     }
 }
