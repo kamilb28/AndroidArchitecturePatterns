@@ -18,7 +18,7 @@ import com.example.patterns.viewmodel.MvvmCounterViewModel
 
 @Composable
 fun MvvmCounterScreen(navController: NavHostController, viewModel: MvvmCounterViewModel = viewModel()) {
-    // Collect the counter state from the ViewModel
+    // TODO create viewModel counter variable, remember to make it as state
     val counter = viewModel.counter.collectAsState()
 
     Column(
@@ -33,6 +33,7 @@ fun MvvmCounterScreen(navController: NavHostController, viewModel: MvvmCounterVi
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        // TODO collect value from viewModel value which you added previously in this file
         Text("Counter: ${counter.value}", fontSize = 36.sp, fontWeight = FontWeight.Bold, color = Color(0xFFD32F2F))
 
         Spacer(modifier = Modifier.height(24.dp))

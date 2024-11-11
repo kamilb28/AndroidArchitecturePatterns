@@ -22,7 +22,6 @@ fun MviCounterScreen(
     navController: NavHostController,
     viewModel: CounterViewModel = viewModel()
 ) {
-    // Collect the current counter state
     val counterState = viewModel.state.collectAsState()
 
     Column(
@@ -37,13 +36,12 @@ fun MviCounterScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Display the counter value
         Text("Counter: ${counterState.value.count}", fontSize = 36.sp, fontWeight = FontWeight.Bold, color = Color(0xFF009688))
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Increment button
         Button(
+            // TODO make button increment value, use math oer in viewModel to send intent (see CounterIntent class)
             onClick = { viewModel.sendIntent(CounterIntent.Increment) },
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF009688), contentColor = Color.White),
             shape = RoundedCornerShape(12.dp),
@@ -52,8 +50,8 @@ fun MviCounterScreen(
             Text("+", fontSize = 18.sp, fontWeight = FontWeight.Medium)
         }
 
-        // Reset button
         Button(
+            // TODO make button increment value, use math oer in viewModel to send intent (see CounterIntent class)
             onClick = { viewModel.sendIntent(CounterIntent.Reset) },
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F), contentColor = Color.White),
             shape = RoundedCornerShape(12.dp),

@@ -9,18 +9,9 @@ class MvcController(
 ) {
     private val counterModel = CounterModel()
 
-    init {
-        println("MvcController initialized") // To verify it's only initialized once
-    }
-
+    // TODO: create increment function, use counterModel.kt and remember to update counterState value
     fun incrementCounter() {
-        // Update the model
-        println("Current counter value 1: ${counterState.value}")
         counterModel.increment()
-        println("Current counter value 2: ${counterState.value}")
-        // Reflect the model's state in the UI state
-        println("Current counter value 3: ${counterState.value}")
         counterState.value = counterModel.count
-        println("Current counter value 4: ${counterState.value}")
     }
 }

@@ -41,11 +41,13 @@ fun MvpCounterScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        // TODO: take value from mvpCounterState
         Text("Counter: ${mvpCounterState.value}", fontSize = 36.sp, fontWeight = FontWeight.Bold, color = Color(0xFFD32F2F))
 
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
+            // TODO: use presenter in MVP model to increment value when button clicked
             onClick = { presenter.incrementCounter() },
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8E24AA), contentColor = Color.White),
             shape = RoundedCornerShape(12.dp),

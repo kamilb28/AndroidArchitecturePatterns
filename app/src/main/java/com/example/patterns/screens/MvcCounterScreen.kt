@@ -34,11 +34,13 @@ fun MvcCounterScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        // TODO: take value form counterState
         Text("Counter: ${counterState.value}", fontSize = 36.sp, fontWeight = FontWeight.Bold, color = Color(0xFFD32F2F))
 
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
+            // TODO: update mvcController to increment counter, use your method
             onClick = { mvcController.incrementCounter() },
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1E88E5), contentColor = Color.White),
             shape = RoundedCornerShape(12.dp),
