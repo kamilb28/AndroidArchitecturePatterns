@@ -41,7 +41,7 @@ fun MviCounterScreen(
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
-            // TODO [MVI]: make button increment value, use math oer in viewModel to send intent (see CounterIntent class)
+            // TODO [MVI]: make button increment value, use method in viewModel to send intent (see CounterIntent class)
             onClick = { /* here */ },
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF009688), contentColor = Color.White),
             shape = RoundedCornerShape(12.dp),
@@ -51,7 +51,7 @@ fun MviCounterScreen(
         }
 
         Button(
-            // TODO [MVI]: make button increment value, use math oer in viewModel to send intent (see CounterIntent class)
+            // TODO [MVI]: make button increment value, use method in viewModel to send intent (see CounterIntent class)
             onClick = { /* here */ },
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F), contentColor = Color.White),
             shape = RoundedCornerShape(12.dp),
