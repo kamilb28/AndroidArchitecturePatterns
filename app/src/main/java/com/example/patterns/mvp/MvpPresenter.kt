@@ -16,6 +16,7 @@ class MvpPresenter : MvpContract.Presenter {
     }
 
     override fun incrementCounter() {
+        // TODO user model to increment value, next update number in view (tip: MvpCounterScreen where is overrided method of view)
         model.increment()
         view?.showCounter(model.count)
     }
