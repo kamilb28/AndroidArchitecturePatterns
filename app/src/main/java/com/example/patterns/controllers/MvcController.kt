@@ -9,9 +9,5 @@ class MvcController(
 ) {
     private val counterModel = CounterModel()
 
-    // TODO: create increment function, use counterModel.kt and remember to update counterState value
-    fun incrementCounter() {
-        counterModel.increment()
-        counterState.value = counterModel.count
-    }
+    // TODO [MVC]: create increment function, use counterModel.kt and remember to update counterState value
 }
